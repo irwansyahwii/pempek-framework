@@ -1,6 +1,6 @@
 # What is Pempek-Framework
 
-Pempek-Framework is a typescript application framework that will allows building applications that is not tightly coupled to a particular persistent storage or database server and a particular user interface platform. With Pempek-Framework, you only need to define your application domain model and the framework will take care how to persists it will also generate the user interface.
+Pempek-Framework is a typescript application framework that will allows building applications that is not tightly coupled to a particular persistent storage or database server and a particular user interface platform. With Pempek-Framework, you only need to define your application domain model and the framework will take care how to save them and how to display them. But you still can modify and provide your own customizations.
 
 # How to use
 
