@@ -117,3 +117,63 @@ pempek g backend-hapi models/book
 ```
 
 The backend-hapi will generate the REST end points based on the metadata of your models.
+
+### Generate the UI - Technical Plans
+
+So far from my experiments. The only way to iterate the list of class members is by instantiating the class using the `new` keyword. After that we can use (this)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties] utility function from Mozilla to retrieve many kind of class members types.
+
+Another finding, we can use `import * as models` and then use `for..in` to iterate the list of the export definitions. Because we only interested with domain model class we can check for the `modelName` variable existence on each class definitions. 
+
+Pseudocode:
+
+```
+
+import * as models from './models';
+
+for(let className in models){
+    let classInfo = getClassInfo(className, models);
+
+    if(classInfo.modelName.length > 0){
+        generateUI(classInfo);
+    }
+}
+
+```
+
+### Generate the Sequelize Service - Technical Plans
+
+Pseudocode:
+
+```
+
+import * as models from './models';
+
+for(let className in models){
+    let classInfo = getClassInfo(className, models);
+
+    if(classInfo.modelName.length > 0){
+        generateSequelizeModelAndMigrations(classInfo);
+        generateSequelizeService(classInfo);
+    }
+}
+
+```
+
+### Generate the Hapi backend - Technical Plans
+
+Pseudocode:
+
+```
+
+import * as models from './models';
+
+for(let className in models){
+    let classInfo = getClassInfo(className, models);
+
+    if(classInfo.modelName.length > 0){
+        generateHapiController(classInfo);
+        generateHapiRESTEndPoints(classInfo);
+    }
+}
+
+```

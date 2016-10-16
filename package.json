@@ -1,0 +1,33 @@
+{
+  "name": "pempek-framework",
+  "version": "1.0.0",
+  "description": "Rapid application development with TypeScript",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.45",
+    "reflect-metadata": "^0.1.8",
+    "ts-type-info": "^6.1.0"
+  },
+  "scripts": {
+    "test": "tsc -p . && node src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irwansyahwii/pempek-framework.git"
+  },
+  "keywords": [
+    "typescript",
+    "framework",
+    "application",
+    "framework"
+  ],
+  "author": "Irwansyah <irwansyah@gmail.com> (https://id.linkedin.com/in/irwansyahirwansyah)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/irwansyahwii/pempek-framework/issues"
+  },
+  "homepage": "https://github.com/irwansyahwii/pempek-framework#readme"
+}
