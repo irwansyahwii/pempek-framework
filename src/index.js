@@ -66,7 +66,11 @@ function generate() {
         let classDef = models[className];
         let modelName = classDef.modelName || '';
         if (modelName.length > 0) {
-            let props = SimplePropertyRetriever.getOwnEnumerablesAndNonenumerables(new classDef());
+            let instance = new classDef();
+            let props = SimplePropertyRetriever.getOwnEnumerablesAndNonenumerables(instance);
+            let propDesc = Object.getOwnPropertyDescriptor(instance, props[0]);
+            var t = Reflect.getMetadata("design:type", classDef, "'title'");
+            console.log(t);
             console.log(props);
         }
     }

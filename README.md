@@ -120,9 +120,11 @@ The backend-hapi will generate the REST end points based on the metadata of your
 
 ### Generate the UI - Technical Plans
 
-So far from my experiments. The only way to iterate the list of class members is by instantiating the class using the `new` keyword. After that we can use (this)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties] utility function from Mozilla to retrieve many kind of class members types.
+So far from my experiments. The only way to iterate the list of class members is by instantiating the class using the `new` keyword. After that we can use [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) utility function from Mozilla to retrieve many kinds of class members types.
 
-Another finding, we can use `import * as models` and then use `for..in` to iterate the list of the export definitions. Because we only interested with domain model class we can check for the `modelName` variable existence on each class definitions. 
+Another finding, we can use `import * as models` and then use `for..in` to iterate the list of the export definitions. Because we only interested with domain model class we can check for the `modelName` variable existence on each class definitions.
+
+After experimenting, I concluded that the only way to get the property type is by adding a notation into it. [This](https://github.com/typeorm/typeorm/blob/master/src/metadata/types/ColumnTypes.ts) project is an ORM project that have to add a notation to all the properties to be able to create column into the table for that class.  
 
 Pseudocode:
 

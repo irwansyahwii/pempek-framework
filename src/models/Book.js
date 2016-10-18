@@ -16,6 +16,10 @@ let Book = class Book {
     test() {
     }
 };
+__decorate([
+    decorators_1.logType, 
+    __metadata('design:type', String)
+], Book.prototype, "title", void 0);
 Book = __decorate([
     decorators_1.modelName('Book'), 
     __metadata('design:paramtypes', [])

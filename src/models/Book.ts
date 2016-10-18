@@ -1,10 +1,9 @@
-import {modelName, enumerable, sealed} from '../decorators';
+import {logType, modelName, enumerable, sealed} from '../decorators';
 
 @modelName('Book')
 export class Book {
+    @logType
     public title:string = '';
-    public author:
-
 
     test(){
 
